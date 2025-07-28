@@ -1,0 +1,50 @@
+:root {
+  --bg-image: url('../assets/images/banner.jpg');
+  --glass-bg: rgba(0, 0, 0, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+html, body { margin:0; padding:0; height:100%; font-family:'Segoe UI',sans-serif; color:#fff;}
+body::before {
+  content:""; position:fixed; top:0; left:0; height:100%; width:100%;
+  background:var(--bg-image) no-repeat center center fixed;
+  background-size:cover; z-index:-2;
+}
+body::after {
+  content:""; position:fixed; top:0; left:0; height:100%; width:100%;
+  background-color:rgba(0,0,0,0.55); z-index:-1;
+}
+.glass-header,.glass-footer {
+  position:fixed; left:0; right:0; background:var(--glass-bg);
+  backdrop-filter:blur(16px); z-index:1030; padding:1rem 2rem;
+}
+.glass-header { top:0; } .glass-footer { bottom:0; text-align:center; font-size:0.9rem;}
+.logo { width:40px; height:40px; object-fit:cover; border-radius:50%; margin-right:10px;}
+.app-title { font-size:1.75rem; font-weight:600; display:flex; align-items:center; color:#fff;}
+.register-container {
+  padding:120px 20px 80px; min-height:calc(100vh - 200px);
+  display:flex; justify-content:center; align-items:center;
+}
+.register-card {
+  background:var(--glass-bg); backdrop-filter:blur(16px);
+  border-radius:20px; border:1px solid var(--glass-border);
+  padding:2rem; width:100%; max-width:450px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+.register-card h2 {
+  font-size:2rem; text-align:center; margin-bottom:1.5rem; font-weight:bold;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.7);
+}
+.form-control {
+  background-color:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.3);
+}
+.form-control::placeholder { color:rgba(255,255,255,0.6);}
+.form-control:focus {
+  background-color:rgba(255,255,255,0.15); border-color:#ffffff; color:#fff; box-shadow:none;
+}
+.btn-register {
+  background:var(--glass-bg); color:#fff; border:1px solid var(--glass-border);
+  width:100%; padding:10px; border-radius:30px; font-weight:500;
+  transition:all 0.3s ease-in-out;
+}
+.btn-register:hover { background-color:rgba(0,0,0,0.7);}
+.form-text { color:rgba(255,255,255,0.7); font-size:0.9rem;}
